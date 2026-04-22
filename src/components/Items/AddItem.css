@@ -1,0 +1,34 @@
+.add-item-page {
+    padding: var(--spacing-lg) 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.add-item-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.add-item-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.add-item-form {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    border: 2px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .add-item-header h1 {
+        font-size: 2rem;
+    }
+
+    .add-item-form {
+        padding: var(--spacing-lg);
+    }
+}
