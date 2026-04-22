@@ -7,17 +7,17 @@
 }
 
 .category-header h1 {
+    font-family: 'Outfit', sans-serif;
     font-size: 2.5rem;
+    font-weight: 800;
     margin-bottom: var(--spacing-sm);
-    background: linear-gradient(135deg, var(--primary-light), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
+    letter-spacing: -0.02em;
 }
 
 .category-header p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
 }
 
 .categories-grid {
@@ -28,11 +28,11 @@
 
 .category-card {
     background: var(--surface);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     padding: var(--spacing-lg);
     cursor: pointer;
     transition: var(--transition);
-    border: 2px solid var(--border);
+    border: 1.5px solid var(--border);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -41,23 +41,20 @@
 .category-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: linear-gradient(135deg, var(--category-color), transparent);
     opacity: 0;
     transition: var(--transition);
 }
 
 .category-card:hover::before {
-    opacity: 0.1;
+    opacity: 0.06;
 }
 
 .category-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     border-color: var(--category-color);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .category-icon {
@@ -68,7 +65,9 @@
 }
 
 .category-card h3 {
-    font-size: 1.3rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: var(--spacing-xs);
     color: var(--text);
     position: relative;
@@ -76,8 +75,8 @@
 }
 
 .category-card p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
     margin-bottom: var(--spacing-sm);
     position: relative;
     z-index: 1;

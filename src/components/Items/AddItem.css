@@ -9,18 +9,19 @@
 }
 
 .add-item-header h1 {
+    font-family: 'Outfit', sans-serif;
     font-size: 2.5rem;
-    background: linear-gradient(135deg, var(--primary-light), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
 }
 
 .add-item-form {
     background: var(--surface);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
-    border: 2px solid var(--border);
+    border: 1.5px solid var(--border);
+    box-shadow: var(--shadow-card);
 }
 
 @media (max-width: 768px) {
