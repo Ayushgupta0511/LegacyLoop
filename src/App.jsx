@@ -12,8 +12,9 @@ import './App.css';
 
 function App() {
   useEffect(() => {
-    const existingItems = localStorage.getItem('legacyloop_items');
-    if (!existingItems || JSON.parse(existingItems).length === 0) {
+    const DEMO_VERSION = 'v3';
+    const currentVersion = localStorage.getItem('legacyloop_demo_version');
+    if (currentVersion !== DEMO_VERSION) {
       const demoItems = [
         // ── CLOTHING ──
         {
@@ -22,7 +23,7 @@ function App() {
           description: 'Great condition, size Large. Perfect for winters on campus!',
           price: 500, isFree: false, condition: 'good',
           section: 'peer-to-peer', category: 'clothing', status: 'available',
-          images: ['/images/hero-clothing.png'],
+          images: ['https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=300&fit=crop'],
           sellerName: 'Rahul K.', sellerYear: '3rd Year'
         },
         {
@@ -31,7 +32,7 @@ function App() {
           description: 'Slightly faded but super comfortable. College Athletics print.',
           price: 0, isFree: true, condition: 'fair',
           section: 'free-giveaway', category: 'clothing', status: 'available',
-          images: ['/images/hero-clothing.png'],
+          images: ['https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=300&fit=crop'],
           sellerName: 'Vikram P.', sellerYear: '4th Year'
         },
         {
@@ -54,11 +55,11 @@ function App() {
         },
         {
           id: 'demo-c3',
-          title: 'Lab Coat – Chemistry Dept',
-          description: 'Size L, clean and well maintained. Name tag removed.',
-          price: 0, isFree: true, condition: 'good',
+          title: 'Cotton Kurta – Ethnic Wear',
+          description: 'Blue printed kurta, Size L. Worn once for college fest.',
+          price: 0, isFree: true, condition: 'like-new',
           section: 'free-giveaway', category: 'clothing', status: 'available',
-          images: ['https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=500&q=80'],
+          images: ['https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=300&fit=crop'],
           sellerName: 'Meera J.', sellerYear: 'Graduate'
         },
 
@@ -69,7 +70,7 @@ function App() {
           description: 'Boils water super fast. Used for one semester in the dorm.',
           price: 300, isFree: false, condition: 'like-new',
           section: 'peer-to-peer', category: 'kitchen', status: 'available',
-          images: ['/images/hero-kitchen.png'],
+          images: ['https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=300&fit=crop'],
           sellerName: 'Ananya S.', sellerYear: '2nd Year'
         },
         {
@@ -78,7 +79,7 @@ function App() {
           description: 'Ceramic mugs, no chips or cracks. Giving away as I am graduating.',
           price: 0, isFree: true, condition: 'good',
           section: 'free-giveaway', category: 'kitchen', status: 'available',
-          images: ['/images/hero-kitchen.png'],
+          images: ['https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=300&fit=crop'],
           sellerName: 'Sneha M.', sellerYear: 'Graduate'
         },
         {
@@ -107,7 +108,7 @@ function App() {
           description: 'Works perfectly, comes with USB receiver. Great battery life.',
           price: 400, isFree: false, condition: 'like-new',
           section: 'faculty-staff', category: 'electronics', status: 'available',
-          images: ['/images/hero-electronics.png'],
+          images: ['https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=300&fit=crop'],
           sellerName: 'Prof. Sharma', sellerYear: 'Faculty'
         },
         {
@@ -116,7 +117,7 @@ function App() {
           description: 'HDMI, USB 3.0 x3, SD card, ethernet. Essential for Mac users.',
           price: 900, isFree: false, condition: 'new',
           section: 'peer-to-peer', category: 'electronics', status: 'available',
-          images: ['/images/hero-electronics.png'],
+          images: ['https://images.unsplash.com/photo-1625842268584-8f3296236761?w=400&h=300&fit=crop'],
           sellerName: 'Aditya N.', sellerYear: '2nd Year'
         },
         {
@@ -154,7 +155,7 @@ function App() {
           description: 'Introduction to Algorithms, 3rd Ed. Highlighted but intact.',
           price: 250, isFree: false, condition: 'good',
           section: 'peer-to-peer', category: 'academic', status: 'available',
-          images: ['/images/hero-textbooks.png'],
+          images: ['https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=300&fit=crop'],
           sellerName: 'Priya S.', sellerYear: '3rd Year'
         },
         {
@@ -181,7 +182,7 @@ function App() {
           description: 'HC Verma Vol 1 & 2 + Irodov. All in good condition.',
           price: 350, isFree: false, condition: 'good',
           section: 'faculty-staff', category: 'academic', status: 'available',
-          images: ['/images/hero-textbooks.png'],
+          images: ['https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=300&fit=crop'],
           sellerName: 'Dr. Kapoor', sellerYear: 'Faculty'
         },
 
@@ -192,7 +193,7 @@ function App() {
           description: 'USB powered, 3 brightness levels. Perfect for late-night study.',
           price: 350, isFree: false, condition: 'like-new',
           section: 'peer-to-peer', category: 'dorm', status: 'available',
-          images: ['/images/hero-dorm.png'],
+          images: ['https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=400&h=300&fit=crop'],
           sellerName: 'Siddharth L.', sellerYear: '2nd Year'
         },
         {
@@ -262,6 +263,7 @@ function App() {
         }
       ];
       localStorage.setItem('legacyloop_items', JSON.stringify(demoItems));
+      localStorage.setItem('legacyloop_demo_version', DEMO_VERSION);
     }
   }, []);
 
