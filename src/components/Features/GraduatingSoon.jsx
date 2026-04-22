@@ -33,7 +33,7 @@ const GraduatingSoon = () => {
                         isFree: false,
                         condition: 'good',
                         isGraduatingSoon: true,
-                        images: ['https://via.placeholder.com/300x200?text=Notes'],
+                        images: ['https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=400&h=300&fit=crop'],
                         sellerName: 'Shruti Gupta',
                         sellerYear: '4th Year'
                     },
@@ -45,7 +45,7 @@ const GraduatingSoon = () => {
                         isFree: true,
                         condition: 'good',
                         isGraduatingSoon: true,
-                        images: ['https://via.placeholder.com/300x200?text=Furniture'],
+                        images: ['/images/products/desk-lamp.png'],
                         sellerName: 'Aman Patel',
                         sellerYear: 'Graduate'
                     },
@@ -57,7 +57,7 @@ const GraduatingSoon = () => {
                         isFree: false,
                         condition: 'like-new',
                         isGraduatingSoon: true,
-                        images: ['https://via.placeholder.com/300x200?text=Lab+Equipment'],
+                        images: ['https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=300&fit=crop'],
                         sellerName: 'Kavya Reddy',
                         sellerYear: '4th Year'
                     }

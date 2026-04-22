@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   useEffect(() => {
-    const DEMO_VERSION = 'v3';
+    const DEMO_VERSION = 'v4';
     const currentVersion = localStorage.getItem('legacyloop_demo_version');
     if (currentVersion !== DEMO_VERSION) {
       const demoItems = [
@@ -70,7 +70,7 @@ function App() {
           description: 'Boils water super fast. Used for one semester in the dorm.',
           price: 300, isFree: false, condition: 'like-new',
           section: 'peer-to-peer', category: 'kitchen', status: 'available',
-          images: ['https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=300&fit=crop'],
+          images: ['/images/products/electric-kettle.png'],
           sellerName: 'Ananya S.', sellerYear: '2nd Year'
         },
         {
@@ -88,7 +88,7 @@ function App() {
           description: 'Portable 1200W induction plate. Perfect for hostel cooking.',
           price: 800, isFree: false, condition: 'good',
           section: 'peer-to-peer', category: 'kitchen', status: 'available',
-          images: ['https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80'],
+          images: ['/images/products/induction-cooktop.png'],
           sellerName: 'Rohan V.', sellerYear: '3rd Year'
         },
         {
@@ -117,7 +117,7 @@ function App() {
           description: 'HDMI, USB 3.0 x3, SD card, ethernet. Essential for Mac users.',
           price: 900, isFree: false, condition: 'new',
           section: 'peer-to-peer', category: 'electronics', status: 'available',
-          images: ['https://images.unsplash.com/photo-1625842268584-8f3296236761?w=400&h=300&fit=crop'],
+          images: ['/images/products/usb-hub.png'],
           sellerName: 'Aditya N.', sellerYear: '2nd Year'
         },
         {
@@ -193,7 +193,7 @@ function App() {
           description: 'USB powered, 3 brightness levels. Perfect for late-night study.',
           price: 350, isFree: false, condition: 'like-new',
           section: 'peer-to-peer', category: 'dorm', status: 'available',
-          images: ['https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=400&h=300&fit=crop'],
+          images: ['/images/products/desk-lamp.png'],
           sellerName: 'Siddharth L.', sellerYear: '2nd Year'
         },
         {
@@ -231,7 +231,7 @@ function App() {
           description: 'Well maintained, comes with bag and picks. Great for beginners.',
           price: 3500, isFree: false, condition: 'good',
           section: 'peer-to-peer', category: 'hobbies', status: 'available',
-          images: ['https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=500&q=80'],
+          images: ['/images/products/guitar.png'],
           sellerName: 'Harsh V.', sellerYear: '4th Year'
         },
         {
