@@ -38,7 +38,7 @@ const ItemList = () => {
                         isFree: false,
                         condition: 'good',
                         images: ['https://via.placeholder.com/300x200?text=Textbook'],
-                        sellerName: 'John Doe',
+                        sellerName: 'Rahul Kumar',
                         sellerYear: '4th Year'
                     },
                     {
@@ -49,7 +49,7 @@ const ItemList = () => {
                         isFree: true,
                         condition: 'like-new',
                         images: ['https://via.placeholder.com/300x200?text=Lab+Coat'],
-                        sellerName: 'Jane Smith',
+                        sellerName: 'Ananya Sharma',
                         sellerYear: 'Graduate'
                     }
                 ]);

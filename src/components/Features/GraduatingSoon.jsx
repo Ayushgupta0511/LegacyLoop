@@ -34,7 +34,7 @@ const GraduatingSoon = () => {
                         condition: 'good',
                         isGraduatingSoon: true,
                         images: ['https://via.placeholder.com/300x200?text=Notes'],
-                        sellerName: 'Sarah Chen',
+                        sellerName: 'Shruti Gupta',
                         sellerYear: '4th Year'
                     },
                     {
@@ -46,7 +46,7 @@ const GraduatingSoon = () => {
                         condition: 'good',
                         isGraduatingSoon: true,
                         images: ['https://via.placeholder.com/300x200?text=Furniture'],
-                        sellerName: 'Mike Rodriguez',
+                        sellerName: 'Aman Patel',
                         sellerYear: 'Graduate'
                     },
                     {
@@ -58,7 +58,7 @@ const GraduatingSoon = () => {
                         condition: 'like-new',
                         isGraduatingSoon: true,
                         images: ['https://via.placeholder.com/300x200?text=Lab+Equipment'],
-                        sellerName: 'Emily Davis',
+                        sellerName: 'Kavya Reddy',
                         sellerYear: '4th Year'
                     }
                 ]);

@@ -30,7 +30,7 @@ const WishlistBoard = () => {
                     itemWanted: 'Calculus Textbook (3rd Edition)',
                     description: 'Looking for the latest edition, willing to pay up to $30',
                     category: 'academic',
-                    userName: 'Alice Johnson',
+                    userName: 'Neha Singh',
                     userYear: '2nd Year'
                 },
                 {
@@ -38,7 +38,7 @@ const WishlistBoard = () => {
                     itemWanted: 'Mini Fridge',
                     description: 'Any working condition, for dorm room',
                     category: 'dorm',
-                    userName: 'Bob Williams',
+                    userName: 'Varun Desai',
                     userYear: '1st Year'
                 }
             ]);
@@ -50,7 +50,7 @@ const WishlistBoard = () => {
         const newWishlist = {
             id: Date.now().toString(),
             ...formData,
-            userName: 'Demo User',
+            userName: 'Aarav Mehta',
             userYear: '3rd Year',
             createdAt: new Date().toISOString()
         };
