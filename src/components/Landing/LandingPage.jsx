@@ -1,10 +1,19 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 
 const LandingPage = () => {
     const navigate = useNavigate();
     const revealRefs = useRef([]);
+    const [carouselIndex, setCarouselIndex] = useState(0);
+
+    const carouselSlides = [
+        { src: '/images/hero-textbooks.png', label: 'Textbooks & Notes', tag: 'Academic' },
+        { src: '/images/hero-electronics.png', label: 'Electronics & Gadgets', tag: 'Electronics' },
+        { src: '/images/hero-dorm.png', label: 'Dorm Essentials', tag: 'Dorm' },
+        { src: '/images/hero-clothing.png', label: 'Clothing & Accessories', tag: 'Clothing' },
+        { src: '/images/hero-kitchen.png', label: 'Kitchen & Cookware', tag: 'Kitchen' }
+    ];
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -24,6 +33,14 @@ const LandingPage = () => {
 
         return () => observer.disconnect();
     }, []);
+
+    // Auto-advance carousel
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCarouselIndex((prev) => (prev + 1) % carouselSlides.length);
+        }, 3500);
+        return () => clearInterval(timer);
+    }, [carouselSlides.length]);
 
     const addRevealRef = (el) => {
         if (el && !revealRefs.current.includes(el)) {
@@ -187,27 +204,28 @@ const LandingPage = () => {
                 </div>
 
                 <div className="hero-visual" ref={addRevealRef}>
-                    <div className="floating-cards">
-                        <div className="float-card float-card-1">
-                            <span className="float-icon">📚</span>
-                            <div>
-                                <strong>DSA Textbook</strong>
-                                <span>₹250 · Like New</span>
+                    <div className="hero-carousel">
+                        {carouselSlides.map((slide, i) => (
+                            <div
+                                key={i}
+                                className={`carousel-slide ${i === carouselIndex ? 'active' : ''}`}
+                            >
+                                <img src={slide.src} alt={slide.label} />
+                                <div className="carousel-caption">
+                                    <span className="carousel-tag">{slide.tag}</span>
+                                    <span className="carousel-label">{slide.label}</span>
+                                </div>
                             </div>
-                        </div>
-                        <div className="float-card float-card-2">
-                            <span className="float-icon">🎁</span>
-                            <div>
-                                <strong>Free Desk Lamp</strong>
-                                <span>Giveaway · Good</span>
-                            </div>
-                        </div>
-                        <div className="float-card float-card-3">
-                            <span className="float-icon">💻</span>
-                            <div>
-                                <strong>USB-C Hub</strong>
-                                <span>₹800 · New</span>
-                            </div>
+                        ))}
+                        <div className="carousel-dots">
+                            {carouselSlides.map((_, i) => (
+                                <button
+                                    key={i}
+                                    className={`carousel-dot ${i === carouselIndex ? 'active' : ''}`}
+                                    onClick={() => setCarouselIndex(i)}
+                                    aria-label={`Go to slide ${i + 1}`}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>

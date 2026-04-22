@@ -191,83 +191,100 @@
     background: var(--border);
 }
 
-/* Hero floating cards */
+/* Hero carousel */
 .hero-visual {
     position: relative;
     z-index: 1;
-    flex: 0 0 380px;
-    height: 420px;
+    flex: 0 0 440px;
+    height: 460px;
     animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
-.floating-cards {
+.hero-carousel {
     position: relative;
     width: 100%;
     height: 100%;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    border: 2px solid var(--border-light);
 }
 
-.float-card {
+.carousel-slide {
     position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    background: var(--surface);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    border: 1.5px solid var(--border-light);
-    min-width: 220px;
-    cursor: default;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.carousel-tag {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.2rem 0.7rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-full);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.carousel-label {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.4rem;
+    z-index: 2;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
     transition: var(--transition);
 }
 
-.float-card:hover {
-    transform: scale(1.04) !important;
-    box-shadow: var(--shadow-xl);
-}
-
-.float-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-}
-
-.float-card div {
-    display: flex;
-    flex-direction: column;
-}
-
-.float-card strong {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--text);
-}
-
-.float-card span {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
-
-.float-card-1 {
-    top: 10%;
-    left: 0;
-    animation: float-card-anim 6s ease-in-out infinite;
-}
-
-.float-card-2 {
-    top: 42%;
-    right: 0;
-    animation: float-card-anim 7s ease-in-out 1s infinite;
-}
-
-.float-card-3 {
-    bottom: 8%;
-    left: 10%;
-    animation: float-card-anim 8s ease-in-out 2s infinite;
-}
-
-@keyframes float-card-anim {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-14px); }
+.carousel-dot.active {
+    background: #fff;
+    width: 22px;
+    border-radius: 4px;
 }
 
 @keyframes fadeInUp {
